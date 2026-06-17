@@ -44,7 +44,6 @@
     keepassxc
     rustc
     skhd
-
     tinymist
     typst
     wget
@@ -91,6 +90,7 @@
       "cmux"
       "gimp"
       "kicad"
+      "smartmontools"
       # "okular" # installed manually; imperfect on macOS
       "kitty"
       "obsidian"
