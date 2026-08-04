@@ -14,6 +14,7 @@
       luasnip
       comment-nvim
       gitsigns-nvim
+      kanagawa-nvim
       marks-nvim
       nvim-lspconfig
       nvim-treesitter.withAllGrammars

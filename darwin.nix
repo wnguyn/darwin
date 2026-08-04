@@ -9,7 +9,11 @@
 
   networking.hostName = "darwin";
   time.timeZone = "America/Chicago";
-
+  system.defaults = {
+    NSGlobalDomain.NSWindowResizeTime = 0.001;
+    CustomSystemPreferences."com.apple.Accessibility".ReduceMotionEnabled = 1;
+    universalaccess.reduceMotion                                          = true;
+  };
   users.users.${username} = {
     name = username;
     home = "/Users/${username}";
@@ -70,12 +74,14 @@
     };
 
     taps = [
+      "can1357/tap"
       "nikitabobko/tap"
     ];
 
     brews = [
       "helix"
       "mas"
+      "omp"
       "switchaudio-osx"
 
     ];
@@ -85,12 +91,12 @@
       "aerospace"
       "desktoppr"
       "helium-browser"
+      "kde-connect"
       "jellyfin-media-player"
       "firefox"
       "cmux"
       "gimp"
       "kicad"
-      "smartmontools"
       # "okular" # installed manually; imperfect on macOS
       "kitty"
       "obsidian"

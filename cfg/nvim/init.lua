@@ -433,7 +433,7 @@ do
   end
 end
 
-vim.cmd.source(vim.fn.stdpath("config") .. "/colors/onedark.lua")
+vim.cmd.colorscheme("kanagawa-wave")
 
 vim.diagnostic.config({
   virtual_text = {

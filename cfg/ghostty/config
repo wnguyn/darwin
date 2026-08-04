@@ -1,30 +1,6 @@
-# Coffee-dark Ghostty theme, matching the kitty theme and wallpaper
+# Kanagawa Wave Ghostty theme
 
-background = #181614
-foreground = #c4c2bf
-
-palette = 0=#181614
-palette = 1=#9a5a52
-palette = 2=#7a8a64
-palette = 3=#a59772
-palette = 4=#6878a0
-palette = 5=#866878
-palette = 6=#688080
-palette = 7=#c4c2bf
-palette = 8=#6e6c69
-palette = 9=#9a5a52
-palette = 10=#7a8a64
-palette = 11=#a59772
-palette = 12=#6878a0
-palette = 13=#866878
-palette = 14=#688080
-palette = 15=#ebe9e5
-
-cursor-color = #d4d2cf
-cursor-text = #181614
-selection-background = #484644
-selection-foreground = #ebe9e5
-
+theme = Kanagawa Wave
 
 keybind = alt+1=goto_tab:1
 keybind = alt+2=goto_tab:2
