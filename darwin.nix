@@ -1,7 +1,15 @@
-{ pkgs, lib, username, ... }:
+{
+  pkgs,
+  lib,
+  username,
+  ...
+}:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.gc.automatic = true;
   nix.gc.options = "--delete-older-than 7d";
   nix.optimise.automatic = true;
@@ -12,7 +20,6 @@
   system.defaults = {
     NSGlobalDomain.NSWindowResizeTime = 0.001;
     CustomSystemPreferences."com.apple.Accessibility".ReduceMotionEnabled = 1;
-    universalaccess.reduceMotion                                          = true;
   };
   users.users.${username} = {
     name = username;
@@ -30,15 +37,17 @@
     cmake
     fd
     fish
+    gleam
+    erlang
+    rebar3
+    bun
     fzf
     gcc
     git
     git-credential-manager
-    helix
     jq
     kitty
     lua-language-server
-    neovim
     nil
     nixd
     opencode
@@ -66,7 +75,7 @@
   ];
 
   homebrew = {
-    enable = true;
+    enable = false;
     onActivation = {
       autoUpdate = true;
       cleanup = "none";
@@ -79,7 +88,6 @@
     ];
 
     brews = [
-      "helix"
       "mas"
       "omp"
       "switchaudio-osx"
@@ -88,6 +96,7 @@
 
     casks = [
       "ghostty"
+      "microsoft-teams"
       "aerospace"
       "desktoppr"
       "helium-browser"
@@ -107,6 +116,7 @@
       "tailscale"
       "vesktop"
       "zed"
+      "syncthing-app"
     ];
   };
 
@@ -118,65 +128,65 @@
   environment.systemPath = lib.mkAfter [ "/Applications/AeroSpace.app/Contents/MacOS" ];
 
   system.activationScripts.aerospaceTCC.text = ''
-    PROFILE="/Library/Managed Preferences/com.nikitabobko.AeroSpace.plist"
-    if [ ! -f "$PROFILE" ]; then
-      cat > "$PROFILE" << 'EOFMARKER'
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-<key>PayloadDescription</key>
-<string>Enables Accessibility access for AeroSpace window manager</string>
-<key>PayloadDisplayName</key>
-<string>AeroSpace Accessibility</string>
-<key>PayloadIdentifier</key>
-<string>com.nikitabobko.AeroSpace.accessibility</string>
-<key>PayloadRemovalDisallowed</key>
-<false/>
-<key>PayloadType</key>
-<string>Configuration</string>
-<key>PayloadUUID</key>
-<string>AEROSPACE-0000-0000-0000-000000000001</string>
-<key>PayloadVersion</key>
-<integer>1</integer>
-<key>PayloadContent</key>
-<array>
-<dict>
-<key>PayloadDescription</key>
-<string>Accessibility permission for AeroSpace</string>
-<key>PayloadDisplayName</key>
-<string>Accessibility</string>
-<key>PayloadIdentifier</key>
-<string>com.nikitabobko.AeroSpace.accessibility.payload</string>
-<key>PayloadType</key>
-<string>com.apple.TCC.configuration-profile-policy</string>
-<key>PayloadUUID</key>
-<string>AEROSPACE-0000-0000-0000-000000000002</string>
-<key>PayloadVersion</key>
-<integer>1</integer>
-<key>Services</key>
-<dict>
-<key>Accessibility</key>
-<array>
-<dict>
-<key>Allowed</key>
-<true/>
-<key>CodeRequirement</key>
-<string>identifier "com.nikitabobko.AeroSpace" and anchor apple generic</string>
-<key>Identifier</key>
-<string>com.nikitabobko.AeroSpace</string>
-<key>IdentifierType</key>
-<string>bundleID</string>
-</dict>
-</array>
-</dict>
-</dict>
-</array>
-</dict>
-</plist>
-EOFMARKER
-      /usr/bin/profiles -I -F "$PROFILE" 2>/dev/null || true
-    fi
+        PROFILE="/Library/Managed Preferences/com.nikitabobko.AeroSpace.plist"
+        if [ ! -f "$PROFILE" ]; then
+          cat > "$PROFILE" << 'EOFMARKER'
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+    <key>PayloadDescription</key>
+    <string>Enables Accessibility access for AeroSpace window manager</string>
+    <key>PayloadDisplayName</key>
+    <string>AeroSpace Accessibility</string>
+    <key>PayloadIdentifier</key>
+    <string>com.nikitabobko.AeroSpace.accessibility</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>AEROSPACE-0000-0000-0000-000000000001</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadContent</key>
+    <array>
+    <dict>
+    <key>PayloadDescription</key>
+    <string>Accessibility permission for AeroSpace</string>
+    <key>PayloadDisplayName</key>
+    <string>Accessibility</string>
+    <key>PayloadIdentifier</key>
+    <string>com.nikitabobko.AeroSpace.accessibility.payload</string>
+    <key>PayloadType</key>
+    <string>com.apple.TCC.configuration-profile-policy</string>
+    <key>PayloadUUID</key>
+    <string>AEROSPACE-0000-0000-0000-000000000002</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>Services</key>
+    <dict>
+    <key>Accessibility</key>
+    <array>
+    <dict>
+    <key>Allowed</key>
+    <true/>
+    <key>CodeRequirement</key>
+    <string>identifier "com.nikitabobko.AeroSpace" and anchor apple generic</string>
+    <key>Identifier</key>
+    <string>com.nikitabobko.AeroSpace</string>
+    <key>IdentifierType</key>
+    <string>bundleID</string>
+    </dict>
+    </array>
+    </dict>
+    </dict>
+    </array>
+    </dict>
+    </plist>
+    EOFMARKER
+          /usr/bin/profiles -I -F "$PROFILE" 2>/dev/null || true
+        fi
   '';
 
   system.defaults = {
