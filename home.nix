@@ -129,7 +129,7 @@
 
   programs.helix = {
     enable = true;
-    package = pkgs.evil-helix;
+#    package = pkgs.evil-helix;
     settings = {
       theme = "moonfly";
       editor.evil = true;

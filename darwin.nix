@@ -98,6 +98,7 @@
       "ghostty"
       "microsoft-teams"
       "aerospace"
+      "cassette"
       "desktoppr"
       "helium-browser"
       "kde-connect"
