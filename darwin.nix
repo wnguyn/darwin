@@ -32,7 +32,6 @@
   environment.systemPackages = with pkgs; [
     bat
     cargo
-    feishin
     clang-tools
     cmake
     fd

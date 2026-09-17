@@ -1,7 +1,6 @@
 alt - 1 : open -a Helium
 alt - 2 : open -a Ghostty
 alt - 3 : open -a Obsidian
-alt - s : open "/Applications/Nix Apps/Feishin.app"
 alt - x : open -a Vesktop
 alt - f : open -a Finder
 alt - c : open -a KeePassXC

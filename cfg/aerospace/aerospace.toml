@@ -1,8 +1,3 @@
-# AeroSpace is the Darwin replacement for the labwc workspace/window workflow.
-
-# skhd owns the keybindings and calls `aerospace` commands so bindings stay close
-# to the old rc.xml layout.
-
 start-at-login = true
 after-login-command = []
 after-startup-command = []

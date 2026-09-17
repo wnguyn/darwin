@@ -40,9 +40,6 @@
     fzf.enable = true;
     zellij.enable = true;
   };
-  home.activation.setWallpaper = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    /usr/bin/osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/${username}/main.jpg"'
-  '';
 
   home.packages = with pkgs; [
     fastfetch
@@ -132,8 +129,6 @@
 #    package = pkgs.evil-helix;
     settings = {
       theme = "moonfly";
-      editor.evil = true;
-      keys.normal."$" = "goto_line_end";
     };
     themes.moonfly = ''
       "attribute" = "turquoise"
