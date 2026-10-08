@@ -83,6 +83,7 @@
 
     taps = [
       "can1357/tap"
+      "nolight132/tap"
       "nikitabobko/tap"
     ];
 
@@ -94,10 +95,10 @@
     ];
 
     casks = [
-      "ghostty"
       "microsoft-teams"
       "aerospace"
       "cassette"
+      "sonora"
       "desktoppr"
       "helium-browser"
       "kde-connect"
@@ -105,6 +106,7 @@
       "firefox"
       "cmux"
       "gimp"
+      "beeper"
       "kicad"
       # "okular" # installed manually; imperfect on macOS
       "kitty"
@@ -116,6 +118,7 @@
       "tailscale"
       "vesktop"
       "zed"
+      "codex"
       "syncthing-app"
     ];
   };
