@@ -4,7 +4,7 @@ alt - 3 : open -a Obsidian
 alt - x : open -a Vesktop
 alt - f : open -a Finder
 alt - c : open -a KeePassXC
-alt - x : open -a Shelv
+alt - s : open -a Shelv
 alt - w : osascript -e 'tell application "System Events" to tell (first process whose frontmost is true) to click menu item "Zoom" of menu "Window" of menu bar 1'
 alt - z : open -a Okular
 alt - left : aerospace move left

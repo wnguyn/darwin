@@ -59,69 +59,9 @@
     enable = true;
   };
 
-  programs.kitty = {
-    enable = true;
-    extraConfig = builtins.readFile ./cfg/kitty/theme.conf;
-    keybindings = {
-      "alt+1" = "goto_tab 1";
-      "alt+2" = "goto_tab 2";
-      "alt+3" = "goto_tab 3";
-      "alt+4" = "goto_tab 4";
-      "alt+5" = "goto_tab 5";
-      "alt+6" = "goto_tab 6";
-      "alt+7" = "goto_tab 7";
-      "alt+8" = "goto_tab 8";
-      "alt+9" = "goto_tab 9";
-    };
-  };
 
   home.file.".aerospace.toml".source = ./cfg/aerospace/aerospace.toml;
   home.file.".config/skhd/skhdrc".source = ./cfg/skhd/skhdrc;
-
-  programs.ghostty = {
-    enable = true;
-    package = null;
-    settings = {
-      theme = "moonfly";
-      keybind = [
-        "alt+1=goto_tab:1"
-        "alt+2=goto_tab:2"
-        "alt+3=goto_tab:3"
-        "alt+4=goto_tab:4"
-        "alt+5=goto_tab:5"
-        "alt+6=goto_tab:6"
-        "alt+7=goto_tab:7"
-        "alt+8=goto_tab:8"
-        "alt+9=goto_tab:9"
-      ];
-    };
-    themes.moonfly = {
-      background = "#080808";
-      foreground = "#bdbdbd";
-      selection-background = "#b2ceee";
-      selection-foreground = "#080808";
-      cursor-color = "#9e9e9e";
-      cursor-text = "#080808";
-      palette = [
-        "0=#323437"
-        "1=#ff5454"
-        "2=#8cc85f"
-        "3=#e3c78a"
-        "4=#80a0ff"
-        "5=#cf87e8"
-        "6=#79dac8"
-        "7=#c6c6c6"
-        "8=#949494"
-        "9=#ff5189"
-        "10=#36c692"
-        "11=#c6c684"
-        "12=#74b2ff"
-        "13=#ae81ff"
-        "14=#85dc85"
-        "15=#e4e4e4"
-      ];
-    };
-  };
 
   programs.helix = {
     enable = true;

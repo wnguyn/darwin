@@ -14,15 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ nixpkgs, nix-darwin, home-manager, stylix, nix-homebrew, ... }:
+  outputs = inputs@{ nixpkgs, nix-darwin, home-manager,  nix-homebrew, ... }:
   let
     username = "darwin";
     system = "aarch64-darwin";
@@ -47,7 +43,6 @@
           home-manager.useUserPackages = true;
           home-manager.users.${username} = import ./home.nix;
           home-manager.extraSpecialArgs = { inherit inputs username; };
-          home-manager.sharedModules = [ stylix.homeModules.stylix ];
         }
         ./darwin.nix
       ];
