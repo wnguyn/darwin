@@ -11,35 +11,6 @@
   home.homeDirectory = "/Users/${username}";
   home.stateVersion = "24.05";
 
-  stylix.enable = true;
-  stylix.base16Scheme = {
-    scheme = "muted";
-    base00 = "141312";
-    base01 = "211f1e";
-    base02 = "333130";
-    base03 = "494746";
-    base04 = "696765";
-    base05 = "b3b1af";
-    base06 = "ceccca";
-    base07 = "e6e4e2";
-    base08 = "78605c";
-    base09 = "786c5c";
-    base0A = "6c785c";
-    base0B = "5c7860";
-    base0C = "5c6e78";
-    base0D = "5c6078";
-    base0E = "6e5c78";
-    base0F = "5c5c5c";
-  };
-  stylix.targets = {
-    ghostty.enable = false;
-    helix.enable = false;
-    kitty.enable = false;
-    bat.enable = true;
-    fish.enable = true;
-    fzf.enable = true;
-    zellij.enable = true;
-  };
 
   home.packages = with pkgs; [
     fastfetch
@@ -68,6 +39,7 @@
 #    package = pkgs.evil-helix;
     settings = {
       theme = "moonfly";
+      editor.bufferline = "always";
     };
     themes.moonfly = ''
       "attribute" = "turquoise"

@@ -15,11 +15,24 @@
   nix.optimise.automatic = true;
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      verilator = prev.verilator.overrideAttrs (old: {
+        postPatch =
+          (old.postPatch or "")
+          + ''
+            substituteInPlace src/flexfix \
+              --replace-fail 'if platform.system() == "Darwin":' 'if False:'
+          '';
+      });
+    })
+  ];
+
   networking.hostName = "darwin";
   time.timeZone = "America/Chicago";
   system.defaults = {
-    NSGlobalDomain.NSWindowResizeTime = 0.001;
-    CustomSystemPreferences."com.apple.Accessibility".ReduceMotionEnabled = 1;
+     NSGlobalDomain.NSWindowResizeTime = 0.001;
+     CustomSystemPreferences."com.apple.Accessibility".ReduceMotionEnabled = 1;
   };
   users.users.${username} = {
     name = username;
@@ -45,7 +58,6 @@
     git
     git-credential-manager
     jq
-    kitty
     lua-language-server
     nil
     nixd
@@ -53,6 +65,7 @@
     pkg-config
     ripgrep
     rust-analyzer
+    verilator
     keepassxc
     rustc
     skhd
