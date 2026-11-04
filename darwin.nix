@@ -121,6 +121,7 @@
       "gimp"
       "beeper"
       "kicad"
+      "font-lexend"
       # "okular" # installed manually; imperfect on macOS
       "kitty"
       "obsidian"
